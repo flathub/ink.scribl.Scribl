@@ -62,27 +62,12 @@
             ]
         },
         {
-            "name": "gst-plugins-ugly",
-            "buildsystem": "meson",
-            "cleanup": [
-                "*.la",
-                "/share/gtk-doc"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.16.3.tar.xz",
-                    "sha256": "403c21688065f41e53008874402b5c07832567cc1309a60df597eab7ff5843f0"
-                }
-            ]
-        },
-        {
             "name": "scribl",
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/jneem/scribl",
-                    "tag": "v0.3.1"
+                    "commit": "6b99f3881be31e4704bbb82a67d6e323b1c88391"
                 },
                 "generated-sources.json"
             ],
