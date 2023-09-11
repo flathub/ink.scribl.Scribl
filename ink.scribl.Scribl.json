@@ -79,8 +79,7 @@
                 "install -D flatpak/ink.scribl.Scribl.appdata.xml /app/share/metainfo/ink.scribl.Scribl.metainfo.xml",
                 "install -D flatpak/ink.scribl.Scribl.128x128.png /app/share/icons/hicolor/128x128/apps/ink.scribl.Scribl.png",
                 "install -D flatpak/ink.scribl.Scribl.256x256.png /app/share/icons/hicolor/256x256/apps/ink.scribl.Scribl.png",
-                "install -D flatpak/ink.scribl.Scribl.desktop /app/share/applications/ink.scribl.Scribl.desktop",
-                "install -D flatpak/scribl.sh /app/bin/scribl.sh"
+                "install -D flatpak/ink.scribl.Scribl.desktop /app/share/applications/ink.scribl.Scribl.desktop"
             ]
         }
     ]
