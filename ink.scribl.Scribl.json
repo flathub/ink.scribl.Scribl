@@ -1,7 +1,7 @@
 {
     "app-id": "ink.scribl.Scribl",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "20.08",
+    "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -10,7 +10,8 @@
     "finish-args": [
         "--socket=fallback-x11",
         "--socket=wayland",
-        "--socket=pulseaudio"
+        "--socket=pulseaudio",
+        "--device=dri"
     ],
     "build-options": {
         "append-path": "/usr/lib/sdk/rust-stable/bin",
@@ -43,8 +44,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20170416-2245-stable.tar.bz2",
-                    "sha256": "1d37e3703d2e9ad3fa98e053be0087a50a50087008b92d2913767f2c94aef672"
+                    "url": "https://download.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20191217-2245-stable.tar.bz2",
+                    "sha256": "b2495c8f2930167d470994b1ce02b0f4bfb24b3317ba36ba7f112e9809264160"
                 }
             ],
             "cleanup": [
@@ -61,27 +62,12 @@
             ]
         },
         {
-            "name": "gst-plugins-ugly",
-            "buildsystem": "meson",
-            "cleanup": [
-                "*.la",
-                "/share/gtk-doc"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.16.3.tar.xz",
-                    "sha256": "403c21688065f41e53008874402b5c07832567cc1309a60df597eab7ff5843f0"
-                }
-            ]
-        },
-        {
             "name": "scribl",
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/jneem/scribl",
-                    "tag": "v0.3.1"
+                    "commit": "6b99f3881be31e4704bbb82a67d6e323b1c88391"
                 },
                 "generated-sources.json"
             ],
@@ -93,8 +79,7 @@
                 "install -D flatpak/ink.scribl.Scribl.appdata.xml /app/share/metainfo/ink.scribl.Scribl.metainfo.xml",
                 "install -D flatpak/ink.scribl.Scribl.128x128.png /app/share/icons/hicolor/128x128/apps/ink.scribl.Scribl.png",
                 "install -D flatpak/ink.scribl.Scribl.256x256.png /app/share/icons/hicolor/256x256/apps/ink.scribl.Scribl.png",
-                "install -D flatpak/ink.scribl.Scribl.desktop /app/share/applications/ink.scribl.Scribl.desktop",
-                "install -D flatpak/scribl.sh /app/bin/scribl.sh"
+                "install -D flatpak/ink.scribl.Scribl.desktop /app/share/applications/ink.scribl.Scribl.desktop"
             ]
         }
     ]
