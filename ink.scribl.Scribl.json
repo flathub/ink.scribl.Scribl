@@ -22,14 +22,6 @@
     "modules": [
         {
             "name": "scribl",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/jneem/scribl",
-                    "commit": "6b99f3881be31e4704bbb82a67d6e323b1c88391"
-                },
-                "generated-sources.json"
-            ],
             "buildsystem": "simple",
             "build-commands": [
                 "cargo --offline fetch --manifest-path Cargo.toml --verbose",
@@ -39,6 +31,18 @@
                 "install -D flatpak/ink.scribl.Scribl.128x128.png /app/share/icons/hicolor/128x128/apps/ink.scribl.Scribl.png",
                 "install -D flatpak/ink.scribl.Scribl.256x256.png /app/share/icons/hicolor/256x256/apps/ink.scribl.Scribl.png",
                 "install -D flatpak/ink.scribl.Scribl.desktop /app/share/applications/ink.scribl.Scribl.desktop"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/jneem/scribl",
+                    "commit": "6b99f3881be31e4704bbb82a67d6e323b1c88391"
+                },
+                {
+                    "type": "patch",
+                    "path": "fix-appdata.patch"
+                },
+                "generated-sources.json"
             ]
         }
     ]
